@@ -3,7 +3,11 @@ use pyo3::prelude::*;
 #[pyfunction]
 // TODO: Define a function that takes as input a vector of unsigned integers
 //  and prints each number in the list.
-fn print_number_list() {}
+fn print_number_list(v: Vec<usize>) {
+    for n in v {
+        println!("{}", n);
+    }
+}
 
 #[pymodule]
 fn arguments(m: &Bound<'_, PyModule>) -> PyResult<()> {
